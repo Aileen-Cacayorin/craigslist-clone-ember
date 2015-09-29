@@ -8,7 +8,18 @@ export default Ember.Route.extend({
   actions: {
     deleteListing(model) {
       model.destroyRecord();
-      this.transitionTo('subcategory', model.subcategory.id)
+      this.transitionTo('index');
+    },
+
+    saveEdit(listing, params) {
+      Object.keys(params).forEach(function(key){
+        if(params[key] !== undefined) {
+          listing.set(key, params[key]);
+        }
+
+      });
+      listing.save();
+      this.transitionTo('listing');
     }
   }
 });

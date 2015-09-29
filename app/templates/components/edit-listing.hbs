@@ -1,0 +1,31 @@
+{{#if editListing}}
+<div class="container">
+  <div class="row">
+    <form>
+      <label for="title">Title</label>
+      {{input class="form-control" value=title id='title' placeholder=listing.title}}
+
+      <label for="name">Name</label>
+      {{input class="form-control"value=name id='name' placeholder=listing.name}}
+
+      <label for="email">Email</label>
+      {{input class="form-control" value=email id='email' placeholder=listing.email}}
+
+      <label for="location">Location</label>
+      {{input class="form-control" value=location id='location' placeholder=listing.location}}
+
+      <label for="details">Details</label>
+      {{textarea class="form-control" value=details id='details' placeholder=listing.details}}
+
+      <label for="image">Image</label>
+      {{input class="form-control" value=image id='image' placeholder=listing.image}}
+
+      <br>
+      <button class="btn btn-default" {{action 'saveEdit' listing}} >Submit</button>
+    </form>
+  </div>
+</div>
+{{else}}
+<button {{action 'showEditForm'}}>Edit this listing</button>
+{{/if}}
+{{yield}}

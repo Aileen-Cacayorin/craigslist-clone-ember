@@ -3,7 +3,8 @@
 
 {{listing-details listing=model}}
 
-<button {{action 'deleteListing' model}}>Delete this listing</button> 
+<button {{action 'deleteListing' model}}>Delete this listing</button>
 
+{{edit-listing listing=model saveEdit='saveEdit'}}
 
 {{outlet}}
