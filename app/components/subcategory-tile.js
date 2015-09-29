@@ -7,5 +7,5 @@ export default Ember.Component.extend({
     if (this.get('sortedListings').length > 2) {
       'sortedListings'.slice(0, 2);
     }
-  }),
+  })
 });
